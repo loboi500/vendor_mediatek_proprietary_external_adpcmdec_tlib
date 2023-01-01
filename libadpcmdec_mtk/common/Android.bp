@@ -1,0 +1,48 @@
+mtk_cc_prebuilt_library {
+    arch: {
+        arm: {
+            cortex_a55: {
+                shared_libs: [
+                    "libmtk_drvb",
+                    "liblog",
+                    "libutils",
+                    "libcutils",
+                    "libc",
+                ],
+                srcs: [
+                    "arm_armv8-2a_cortex-a55/libadpcmdec_mtk.so",
+                ],
+            },
+        },
+        arm64: {
+            cortex_a55: {
+                shared_libs: [
+                    "libmtk_drvb",
+                    "liblog",
+                    "libutils",
+                    "libcutils",
+                    "libc",
+                ],
+                srcs: [
+                    "arm64_armv8-2a_cortex-a55/libadpcmdec_mtk.so",
+                ],
+            },
+        },
+    },
+    compile_multilib: "both",
+    export_include_dirs: [
+        "include",
+    ],
+    mtk_brm_platform: "common",
+    mtk_product_line: "tablet",
+    mtk_src_path: "vendor/mediatek/proprietary/external/adpcmdec",
+    mtk_type: "cc_prebuilt_library_shared",
+    name: "libadpcmdec_mtk",
+    owner: "mtk",
+    proprietary: true,
+    strip: {
+        none: true,
+    },
+    vendor: true,
+}
+
